@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FS Capital Group | Investor & Advisor</title>
+  
+  <meta property="og:title" content="FS Capital Group" />
+  <meta property="og:description" content="Backing Great Founders Solving Interesting Problems" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1950&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@replit" />
+  <meta name="twitter:title" content="FS Capital Group" />
+  <meta name="twitter:description" content="Backing Great Founders Solving Interesting Problems" />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1950&q=80" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Variables */
+    :root {
+      --bg-navy: #080d1a;
+      --bg-navy-light: #0d1526;
+      --bg-navy-dark: #050810;
+      --gold: #c9a84c;
+      --text-white: #f0f0f0;
+      --text-muted: #9aa5b4;
+      --font-body: 'DM Sans', sans-serif;
+      --font-heading: 'DM Serif Display', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-navy);
+      color: var(--text-white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: var(--font-heading);
+      font-weight: 400;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Typography */
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .subtext {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+
+    .btn-primary {
+      background-color: var(--gold);
+      color: var(--bg-navy);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-primary:hover {
+      background-color: transparent;
+      color: var(--gold);
+      box-shadow: 0 0 15px rgba(201, 168, 76, 0.4);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--gold);
+      color: var(--bg-navy);
+      box-shadow: 0 0 15px rgba(201, 168, 76, 0.4);
+    }
+
+    .btn-pill {
+      border-radius: 50px;
+    }
+
+    /* Dividers */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+      border: none;
+      margin: 0;
+    }
+
+    /* Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: all 0.3s ease;
+    }
+
+    header.scrolled {
+      background-color: var(--bg-navy);
+      padding: 1rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      color: var(--gold);
+      font-size: 1.5rem;
+    }
+
+    .logo-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-white);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Section 1 - Hero */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg-container {
+      position: absolute;
+      top: -5%;
+      left: -5%;
+      width: 110%;
+      height: 110%;
+      z-index: -2;
+    }
+
+    .hero-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.1s linear;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(8, 13, 26, 0.75);
+      z-index: -1;
+    }
+
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      background-color: var(--gold);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      padding: 0 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    /* Sections General */
+    section {
+      padding: 6rem 0;
+    }
+
+    /* Section 2 - About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-img-container {
+      position: relative;
+    }
+
+    .about-img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-radius: 4px;
+    }
+
+    .about-img-container::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--gold);
+      z-index: -1;
+      border-radius: 4px;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+    }
+
+    .stat-val {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--text-white);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Section 3 - How We Help */
+    .bg-light {
+      background-color: var(--bg-navy-light);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      perspective: 1000px;
+    }
+
+    .card {
+      background-color: var(--bg-navy);
+      padding: 2.5rem;
+      border-top: 3px solid var(--gold);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      position: relative;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(201, 168, 76, 0.1) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(201, 168, 76, 0.1);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      transform: translateZ(20px);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      transform: translateZ(10px);
+    }
+
+    /* Section 4 - Criteria */
+    .criteria-section {
+      text-align: center;
+    }
+
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+      text-align: left;
+    }
+
+    .criteria-box {
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      padding: 2.5rem;
+      border-radius: 4px;
+      background-color: rgba(13, 21, 38, 0.5);
+    }
+
+    .criteria-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--gold);
+    }
+
+    .criteria-box ul li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .criteria-box ul li::before {
+      content: '•';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+
+    .city-parallax {
+      height: 50vh;
+      min-height: 400px;
+      margin-top: 6rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .city-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 140%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .city-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(8, 13, 26, 0.85);
+      z-index: -1;
+    }
+
+    .pull-quote {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      color: var(--gold);
+      max-width: 800px;
+      text-align: center;
+      padding: 0 2rem;
+      line-height: 1.4;
+    }
+
+    /* Section 5 - Contact */
+    .contact-section {
+      text-align: center;
+      padding: 8rem 0;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2.5rem;
+    }
+
+    /* SVG Skyline */
+    .skyline-container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background: linear-gradient(to top, var(--bg-navy-dark), transparent);
+    }
+
+    .skyline-svg {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .building {
+      transform: scaleY(0);
+    }
+
+    .building.visible {
+      animation: growUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    .window {
+      fill: rgba(201, 168, 76, 0.25); /* Increased contrast from 0.05 to 0.25 */
+    }
+
+    @keyframes growUp {
+      from { transform: scaleY(0); }
+      to { transform: scaleY(1); }
+    }
+
+    .skyline-glow {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(to bottom, rgba(201,168,76,0.05) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--bg-navy-dark);
+      padding: 3rem 0;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      color: var(--gold);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--bg-navy-light);
+        flex-direction: column;
+        padding: 6rem 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+        z-index: 1001;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-img-container::after {
+        display: none;
+      }
+
+      .about-img {
+        height: 400px;
+      }
+
+      .criteria-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons, .contact-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header id="header">
+    <div class="container nav-container">
+      <div class="logo-container">
+        <div class="logo">FS Capital Group</div>
+        <div class="logo-sub">Investor & Advisor</div>
+      </div>
+      <nav class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#how-we-help">How We Help</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+    </div>
+  </header>
+
+  <!-- Section 1 - Hero -->
+  <section class="hero" id="home">
+    <div class="hero-bg-container">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1950&q=80" alt="Hero Background" class="hero-bg" id="hero-bg">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="particles" id="particles"></div>
+    
+    <div class="hero-content reveal active">
+      <span class="eyebrow">Early-Stage Investing & Advisory</span>
+      <h1>Backing Great Founders Solving Interesting Problems</h1>
+      <p class="subtext">Category agnostic. What matters is exceptional people building something that matters.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="#about" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 - About -->
+  <section id="about" class="container reveal">
+    <div class="about-grid">
+      <div class="about-img-container">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Modern Office" class="about-img">
+      </div>
+      <div class="about-content">
+        <span class="eyebrow">Who We Are</span>
+        <h2>Investing in Exceptional Founders</h2>
+        <p class="about-text">FS Capital Group invests in and advises early-stage companies. We are category agnostic — what we care about is great founders solving interesting problems. We are drawn to customer-centric, product-obsessive companies built by agile teams that listen and learn quickly.</p>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-val">Early-Stage</span>
+            <span class="stat-label">Focus</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Founder-Led</span>
+            <span class="stat-label">Companies</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Operator</span>
+            <span class="stat-label">Perspective</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Section 3 - How We Help -->
+  <section id="how-we-help" class="bg-light">
+    <div class="container reveal">
+      <span class="eyebrow">How We Help</span>
+      <h2>Ways We Work With Teams</h2>
+      
+      <div class="cards-grid">
+        <div class="card reveal" style="transition-delay: 100ms;">
+          <h3>Strategy & Operations</h3>
+          <p>Working closely with founders on resource allocation, maximizing effectiveness and creativity as teams build from 0 to 1, and then 1 to X.</p>
+        </div>
+        <div class="card reveal" style="transition-delay: 200ms;">
+          <h3>Finance & Accounting</h3>
+          <p>Helping professionalize the finance function — driving business performance, identifying growth opportunities, fundraising support, defensible financials, and building foundations for steady growth.</p>
+        </div>
+        <div class="card reveal" style="transition-delay: 300ms;">
+          <h3>Building Teams</h3>
+          <p>Helping build high-performance cultures. The right people, processes, and tools — hiring the right people at the right time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Section 4 - What We Look For -->
+  <section id="criteria" class="container criteria-section reveal">
+    <span class="eyebrow">Investment Criteria</span>
+    <h2>What We Look For</h2>
+    
+    <div class="criteria-grid">
+      <div class="criteria-box">
+        <h3>Companies We Back</h3>
+        <ul>
+          <li>Customer centric</li>
+          <li>Product obsessive</li>
+          <li>Solving real problems</li>
+        </ul>
+      </div>
+      <div class="criteria-box">
+        <h3>Teams We Work With</h3>
+        <ul>
+          <li>Agile</li>
+          <li>Listens and learns quickly</li>
+          <li>High on imagination and creativity</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="city-parallax">
+    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1950&q=80" alt="Cityscape" class="city-bg" id="city-bg">
+    <div class="city-overlay"></div>
+    <div class="pull-quote serif reveal">
+      "We want to invest in great founders that are solving interesting problems."
+    </div>
+  </div>
+
+  <!-- Section 5 - Contact -->
+  <section id="contact" class="contact-section container reveal">
+    <h2>Let's Connect</h2>
+    <p class="subtext">Twitter is the best way to reach us — DMs are open. We're also active on LinkedIn.</p>
+    <div class="contact-buttons">
+      <a href="https://twitter.com/FaheemSiddiqi" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-pill">Twitter →</a>
+      <a href="https://www.linkedin.com/in/faheemsiddiqi/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-pill">LinkedIn →</a>
+    </div>
+  </section>
+
+  <!-- SVG Skyline -->
+  <div class="skyline-container" id="skyline-container">
+    <div class="skyline-glow"></div>
+    <svg class="skyline-svg" id="skyline-svg" viewBox="0 0 1000 200" preserveAspectRatio="none">
+      <!-- Buildings generated via JS to allow for staggered animation -->
+    </svg>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">FS Capital Group</div>
+    <div class="footer-copy">© 2026 FS Capital Group. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // 1. Mobile Menu
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    
+    mobileBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // 2. Sticky Header
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // 3. Scroll Reveal Animations
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, revealOptions);
+
+    reveals.forEach(reveal => {
+      // Hero content is already active
+      if (!reveal.classList.contains('active')) {
+        revealObserver.observe(reveal);
+      }
+    });
+
+    // 4. Parallax Scrolling
+    const cityBg = document.getElementById('city-bg');
+    const skylineContainer = document.getElementById('skyline-container');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+
+      // City Background (20% speed)
+      const cityRect = cityBg.parentElement.getBoundingClientRect();
+      if (cityRect.top < window.innerHeight && cityRect.bottom > 0) {
+        const distance = window.innerHeight - cityRect.top;
+        cityBg.style.transform = `translateY(${distance * 0.2 - 100}px)`;
+      }
+
+      // Skyline (Gentle upward parallax)
+      const skylineRect = skylineContainer.getBoundingClientRect();
+      if (skylineRect.top < window.innerHeight) {
+        const dist = window.innerHeight - skylineRect.top;
+        skylineContainer.style.transform = `translateY(${-dist * 0.1}px)`;
+      }
+    });
+
+    // 5. Hero Mouse Movement (Lerp Parallax + Particles)
+    const hero = document.getElementById('home');
+    let mouseX = 0;
+    let mouseY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    
+    // Generate Particles
+    const particlesContainer = document.getElementById('particles');
+    const particles = [];
+    
+    for (let i = 0; i < 25; i++) {
+      const p = document.createElement('div');
+      p.classList.add('particle');
+      
+      const size = Math.random() * 4 + 2;
+      p.style.width = `${size}px`;
+      p.style.height = `${size}px`;
+      
+      const posX = Math.random() * 100;
+      const posY = Math.random() * 100;
+      p.style.left = `${posX}%`;
+      p.style.top = `${posY}%`;
+      
+      const speed = Math.random() * 0.05 + 0.01;
+      
+      particlesContainer.appendChild(p);
+      particles.push({ element: p, originX: posX, originY: posY, speed: speed });
+    }
+
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      // Normalize mouse position -1 to 1
+      mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    });
+
+    function animateHero() {
+      // Lerp
+      currentX += (mouseX - currentX) * 0.05;
+      currentY += (mouseY - currentY) * 0.05;
+
+      // Move Background (max ±15px) - Removed scroll Y offset
+      heroBg.style.transform = `translate(${-currentX * 15}px, ${-currentY * 15}px) scale(1.05)`;
+
+      // Move Particles
+      particles.forEach(p => {
+        p.element.style.transform = `translate(${-currentX * 100 * p.speed}vw, ${-currentY * 100 * p.speed}vh)`;
+      });
+
+      requestAnimationFrame(animateHero);
+    }
+    animateHero();
+
+    // 6. Cards 3D Tilt Effect
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Specular highlight
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+        
+        // 3D Tilt (max 8 degrees)
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      });
+    });
+
+    // 7. Generate and Animate SVG Skyline
+    const svg = document.getElementById('skyline-svg');
+    const numBuildings = 35;
+    const svgWidth = 1000;
+    let buildingElements = [];
+
+    // Generate Buildings
+    let currentXPos = 0;
+    for (let i = 0; i < numBuildings; i++) {
+      if (currentXPos >= svgWidth) break;
+      
+      const width = Math.random() * 30 + 15;
+      const height = Math.random() * 120 + 30;
+      const finalHeight = Math.random() > 0.8 ? height * 1.5 : height;
+      
+      const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      group.classList.add('building');
+      group.style.animationDelay = `${i * 80}ms`;
+      group.style.transformOrigin = `${currentXPos + width/2}px 200px`;
+      
+      const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      rect.setAttribute('x', currentXPos);
+      rect.setAttribute('y', 200 - finalHeight);
+      rect.setAttribute('width', width);
+      rect.setAttribute('height', finalHeight);
+      rect.setAttribute('fill', '#060a14'); // Keep very dark fill
+      rect.setAttribute('stroke', 'rgba(201, 168, 76, 0.4)'); // Increased contrast for stroke
+      rect.setAttribute('stroke-width', '1.5'); // Slightly thicker stroke
+      group.appendChild(rect);
+      
+      if (finalHeight > 100 && Math.random() > 0.5) {
+        const spire = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        spire.setAttribute('x', currentXPos + width/2 - 1);
+        spire.setAttribute('y', 200 - finalHeight - 20);
+        spire.setAttribute('width', 2);
+        spire.setAttribute('height', 20);
+        spire.setAttribute('fill', '#060a14');
+        group.appendChild(spire);
+      }
+      
+      if (width > 20 && finalHeight > 60 && Math.random() > 0.3) {
+        for (let r = 0; r < Math.floor(finalHeight/15); r++) {
+          for (let c = 0; c < Math.floor(width/8); c++) {
+            if (Math.random() > 0.7) {
+              const win = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+              win.setAttribute('x', currentXPos + 4 + c*8);
+              win.setAttribute('y', 200 - finalHeight + 10 + r*15);
+              win.setAttribute('width', 4);
+              win.setAttribute('height', 8);
+              win.classList.add('window');
+              group.appendChild(win);
+            }
+          }
+        }
+      }
+
+      svg.appendChild(group);
+      
+      currentXPos += width + Math.random() * 5;
+    }
+
+    // Observe Skyline for Animation
+    const skylineObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        document.querySelectorAll('.building').forEach(b => b.classList.add('visible'));
+        skylineObserver.disconnect();
+      }
+    }, { threshold: 0.1 });
+    
+    skylineObserver.observe(skylineContainer);
+
+  </script>
+</body>
+</html>

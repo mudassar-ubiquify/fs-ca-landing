@@ -1,0 +1,122 @@
+Build a single-page professional landing page for FS Capital Group — Faheem Siddiqi's investing arm. Use a single index.html file with embedded CSS and JS. No frameworks — just clean HTML, CSS, and vanilla JavaScript.
+
+Design System:
+
+Color palette: deep navy background #080d1a, slightly lighter sections #0d1526, gold accent #c9a84c, white body text #f0f0f0, muted text #9aa5b4
+Typography: Google Fonts — use "DM Sans" for body and "DM Serif Display" for headings. Import both.
+Gold horizontal rule dividers between sections
+Subtle gold glow or border on hover states for cards and buttons
+Fully responsive — mobile-first
+
+
+Navigation (sticky, top):
+
+Left: "FS Capital Group" in gold serif font, subtitle "Investor & Advisor" in small muted text below
+Right: nav links — About, How We Help, Contact
+Transparent on hero, solid navy background on scroll (JS scroll listener)
+Hamburger menu on mobile
+
+
+Section 1 — Hero:
+
+Full viewport height
+Background image via Unsplash: https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1950&q=80
+Dark navy overlay at 75% opacity over the image
+Center-aligned content:
+
+Eyebrow label in gold caps: EARLY-STAGE INVESTING & ADVISORY
+H1: Backing Great Founders Solving Interesting Problems
+Subtext: Category agnostic. What matters is exceptional people building something that matters.
+Two CTA buttons side by side: primary gold filled button "Get In Touch" (scrolls to contact), secondary gold outline button "Learn More" (scrolls to about)
+
+
+
+
+Section 2 — About:
+
+Two-column layout: left side has a modern office/atrium Unsplash photo https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80 with a gold border accent. Right side has:
+
+Section label in gold caps: WHO WE ARE
+H2: Investing in Exceptional Founders
+Body text: "FS Capital Group invests in and advises early-stage companies. We are category agnostic — what we care about is great founders solving interesting problems. We are drawn to customer-centric, product-obsessive companies built by agile teams that listen and learn quickly."
+Three gold-accented stat/callout items in a row: Early-Stage / Focus · Founder-Led / Companies · Operator / Perspective
+
+
+
+
+Section 3 — How We Help (3 Cards):
+
+Section label in gold caps: HOW WE HELP
+H2: Ways We Work With Teams
+Three equal cards on #0d1526 background, gold top border, subtle gold glow on hover:
+
+Strategy & Operations — "Working closely with founders on resource allocation, maximizing effectiveness and creativity as teams build from 0 to 1, and then 1 to X."
+Finance & Accounting — "Helping professionalize the finance function — driving business performance, identifying growth opportunities, fundraising support, defensible financials, and building foundations for steady growth."
+Building Teams — "Helping build high-performance cultures. The right people, processes, and tools — hiring the right people at the right time."
+
+
+
+
+Section 4 — What We Look For:
+
+Dark navy background, centered layout
+Section label in gold caps: INVESTMENT CRITERIA
+H2: What We Look For
+Two side-by-side gold-bordered callout boxes:
+
+Companies We Back: Customer centric · Product obsessive · Solving real problems
+Teams We Work With: Agile · Listens and learns quickly · High on imagination and creativity
+
+
+Below: full-width cityscape image https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1950&q=80 with dark overlay and a centered pull quote in italic gold serif: "We want to invest in great founders that are solving interesting problems."
+
+
+Section 5 — Contact:
+
+Full-width dark section, centered
+H2: Let's Connect
+Body: "Twitter is the best way to reach us — DMs are open. We're also active on LinkedIn."
+Two gold-outlined pill buttons: Twitter → https://twitter.com/FaheemSiddiqi · LinkedIn → https://www.linkedin.com/in/faheemsiddiqi/
+
+
+Footer:
+
+Very dark #050810, centered text
+Logo/name: "FS Capital Group" in gold
+© 2026 FS Capital Group. All rights reserved.
+
+
+SVG Skyline (just above footer):
+
+Hand-coded SVG city skyline silhouette spanning 100% width — buildings of varying heights, widths, and window grid patterns. Dark navy-on-navy fill with a very subtle gold stroke at 12% opacity. Feels architectural and premium, not cartoonish. Include spires/antennas on select towers.
+A faint gold gradient glow along the top edge of the skyline as if lit from above
+Buildings animate in on page load — each grows from bottom up using staggered CSS scaleY animation (transform-origin: bottom), 80ms stagger between buildings
+
+
+Parallax Scrolling:
+
+Hero background image: parallax at 40% scroll speed using requestAnimationFrame
+Cityscape image in Section 4: softer parallax at 20% scroll speed
+SVG skyline: gentle upward parallax as user scrolls toward it, as if rising into view
+
+
+Mouse Movement Effects:
+
+Hero section: mouse-tracking parallax on the background image — shifts max ±15px in X/Y opposite to cursor direction. Use smooth lerp (linear interpolation) for fluid movement.
+Hero section: second layer of 25 small semi-transparent gold particle dots at randomized positions that drift with mouse movement at a different speed to the background, enhancing depth
+"How We Help" cards: CSS 3D tilt on hover — card subtly rotates on X/Y axis tracking cursor within the card (max 8 degrees). Gold specular highlight shifts with mouse position inside the card.
+
+
+Scroll Animations:
+
+Use IntersectionObserver to animate all sections into view: fade up + Y translate from 30px → 0
+Stagger card animations with 100ms delay between each
+All animations should feel smooth and premium — nothing bouncy or cheap
+
+
+General Notes:
+
+All Unsplash images load via direct URL with ?auto=format&fit=crop. Use CSS object-fit: cover for all images.
+Global scroll-behavior: smooth
+The overall feel should be a premium, confident investment firm — think understated luxury, not flashy. Let the dark palette, gold accents, and typography do the work.
+
