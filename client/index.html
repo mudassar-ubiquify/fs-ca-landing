@@ -538,16 +538,37 @@
     footer {
       background-color: var(--bg-navy-dark);
       padding: 3rem 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
       text-align: center;
-      position: relative;
-      z-index: 10;
     }
 
     .footer-logo {
       font-family: var(--font-heading);
       color: var(--gold);
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+    }
+
+    .footer-contact {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .footer-email {
+      color: var(--gold);
+      margin-left: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .footer-email:hover {
+      color: var(--text-white);
+      text-shadow: 0 0 8px rgba(201,168,76,0.6);
     }
 
     .footer-copy {
@@ -758,8 +779,18 @@
 
   <!-- Footer -->
   <footer>
-    <div class="footer-logo">FS Capital Group</div>
-    <div class="footer-copy">© 2026 FS Capital Group. All rights reserved.</div>
+    <div class="container footer-inner">
+      <div class="footer-logo">FS Capital Group</div>
+
+      <div class="footer-contact">
+        For inquiries, please contact us at 
+        <a href="mailto:faheem@fscapgroup.com" class="footer-email">
+          faheem@fscapgroup.com
+        </a>
+      </div>
+  
+      <div class="footer-copy">© 2026 FS Capital Group. All rights reserved.</div>
+    </div>
   </footer>
 
   <script>
